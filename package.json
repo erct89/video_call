@@ -1,0 +1,19 @@
+{
+	"name": "video_call",
+  	"version": "1.0.0",
+	"description": "",
+	"main": "index.html",
+	"window": {
+		"fullscreen": true, 
+		"show_in_taskbar": true,
+		"title": "demoOtis",
+		"frame": true,
+		"toolbar": true
+	},
+	"dependencies":{
+		"nw":"^0.16.1"
+	},
+	"scripts": {
+		"start": "nw ."
+	}
+}
