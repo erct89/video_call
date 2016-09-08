@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="js/spin.min.js"></script>
 		<script type="text/javascript" src="janus.js"></script>
 		<script type="text/javascript" src="videocalltest.js"></script>
+		<script type="text/javascript" src="js/frameless_window.js"></script>
 		<script type="text/javascript" src="js/dimension.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 		<link rel="stylesheet" href="css/demo.css" type="text/css"/>
@@ -26,9 +27,11 @@
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
+					<!--
 					<a class="navbar-brand" href="index.html">
 						<img style="height: 50px; width: 100px" src="otislogo.svg"/>
 					</a>
+					-->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -36,7 +39,7 @@
 				</button>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
+				<!--<ul class="nav navbar-nav">
 					<li><a href="index.html">Home</a></li>
 					<li class="dropdown active">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
@@ -56,13 +59,13 @@
 							<li><a href="admin.html">Admin/Monitor</a></li>
 						</ul>
 					</li>
-				</ul>
+				</ul>-->
 				<div class="navbar-header navbar-right">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="http://www.ivrpowers.com" class="navbar-link" style="padding-top: 0; padding-bottom: 0;">
-								<img style="height: 50px; width: 100px" src="otislogo.svg"/>
-							</a>
+							<button id="close-window-button" class="btn btn-danger">
+								<img style="height: 30px; width: 30px" src="images/close_window.svg"/>
+							</button>
 						</li>
 					</ul>
 				</div>
@@ -74,14 +77,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="page-header">
-					<h1>Plugin Demo: Video Call
+					<h1>Demo: Video Call
 						<button class="btn btn-default" autocomplete="off" id="start">Start</button>
 					</h1>
 				</div>
 				<div class="container" id="details">
 					<div class="row">
 						<div class="col-md-12 middle" style="padding: 0">
-							<img src="otislogo.svg" alt="WebRTC Demo" style="max-width: 100%">
+							<img src="images/otislogo.svg" alt="WebRTC Demo" style="max-width: 100%">
 							<!--<h3>Demo details</h3>-->
 							<!--<p>This Video Call demo is basically an example of how you can-->
 							<!--achieve a-->
@@ -197,11 +200,18 @@
 						</div>
 					</div>
 				</div>
-				<hr>
+				
 				<div class="footer">
+					<hr>
 					<p>WebRTC Gateway &copy; 2016</p>
 				</div>
 			</div>
-			
+			<script type="text/javascript">
+				autoHeight(document.getElementsByClassName('middle')[0], 
+					[document.getElementsByTagName('nav')[0],
+					document.getElementsByClassName('page-header')[0], 
+					document.getElementsByClassName('footer')[0],
+					document.getElementsByTagName('hr')[1]]);
+			</script>
 	</body>
 </html>
