@@ -1,3 +1,29 @@
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+}
+
+#tierBlur{
+	background-image: url('../images/backlogo.jpg');
+	background-repeat: repeat;
+	display: block;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	z-index: -10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#username, #peer{
+	margin-right: 5px; 
+}
+
 .rounded {
 	border-radius: 5px;
 }
@@ -20,6 +46,7 @@ img{ height: 100%; }
 
 .navbar{
 	margin-bottom: 0px;
+	min-height: 20px;
 }
 
 .navbar-default {
@@ -35,7 +62,12 @@ img{ height: 100%; }
 }
 
 .navbar-nav > li{
-	padding-top: 2.5px;
+	padding: 3px 0;
+}
+
+#close-window-button > img{
+	height: 15px;
+	width: 15px;
 }
 
 .margin-sm {
@@ -114,4 +146,8 @@ div.no-video-container {
 }
 .footer p{
 	margin-bottom: 0px; 
+}
+
+div#login > div, div#phone > div{
+	display: flex;
 }

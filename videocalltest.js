@@ -259,7 +259,7 @@ $(document).ready(function() {
 										$('#myvideo').hide();
 										$('#videoleft').append(
 											'<div class="no-video-container">' +
-												'<i class="fa fa-video-camera fa-5 no-video-icon"></i>' +
+												'<i class="glyphicon glyphicon-facetime-video fa-5 no-video-icon fa-5 no-video-icon"></i>' +
 												'<span class="no-video-text">No webcam available</span>' +
 											'</div>');
 									}
@@ -295,7 +295,7 @@ $(document).ready(function() {
 										$('#remotevideo').hide();
 										$('#videoright').append(
 											'<div class="no-video-container">' +
-												'<i class="fa fa-video-camera fa-5 no-video-icon"></i>' +
+												'<i class="glyphicon glyphicon-facetime-video fa-5 no-video-icon"></i>' +
 												'<span class="no-video-text">No remote video available</span>' +
 											'</div>');
 									}
