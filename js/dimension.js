@@ -44,11 +44,31 @@ if(typeof(Dimensions) === 'undefined'){
 				if(Utils.isDomElement(element)){
 					return element.clientWidth;
 				}else if(element === window){
-					return $(element).innerWidth();
+					return element.innerWidth;
 				}
 			}
 
 			return null;
+		},
+
+		setWidthTag: function (element, width){
+			var w = Number(width);
+			if(w !== NaN){
+				if(window.jQuery){
+					if(Utils.isDomElement(element)){
+						return $(element).width(w + "px");
+					}else if(element === window){
+						return $(element).width(w + "px");
+					}
+				}else{
+					if(Utils.isDomElement(element)){
+						return element.clientWidth = w + "px";
+					}else if(element === window){
+						return element.innerWidth = w + "px";
+					}
+				}
+			}
+			return false;
 		},
 
 		elementsHeigth: function (arrayElements){
@@ -108,16 +128,49 @@ if(typeof(Dimensions) === 'undefined'){
 			return null;
 		},
 
+		difWidthTag: function (fullWidth,staticWidth){
+			var fullW = 0, fullStaticWidth = 0;
+			
+			if(fullWidth !== null && fullWidth !== undefined && staticWidth !== null && staticWidth !== undefined){
+				fullW = Dimensions.elementsWidth(fullWidth);
+				fullStaticWidth = Dimensions.elementsWidth(staticWidth);
+				
+				return fullW - fullStaticWidth;
+			}
+
+			return null;
+		},
+
+		copyWidthTag: function(elementOrigin, elementDestiny){
+			if(Utils.isDomElement(elementOrigin) && Utils.isDomElement(elementDestiny)){
+				return Dimensions.setWidthTag(elementDestiny,Dimensions.getWidthTag(elementOrigin));
+			}
+
+			return false;
+		},
+
 		autoHeight: function (element, staticHeight){
 			var id = null;
 			if(Utils.isDomElement(element)){
 				element.style.height = Dimensions.difHeigthTag(window,staticHeight) + "px";
 
 				id = setInterval(function(){
-						var h = Dimensions.difHeigthTag(window,staticHeight);			
-						element.style.height = h + "px";
-					}, 5000);
+					var h = Dimensions.difHeigthTag(window,staticHeight);			
+					element.style.height = h + "px";
+				}, 3000);
 				
+			}
+		},
+
+		autoWidth: function (element, staticWidth){
+			var id = null;
+			if(Utils.isDomElement(element)){
+				element.style.width = Dimensions.difWidthTag(window,staticWidth) + "px";
+
+				id = setInterval(function(){
+					var w = Dimensions.difWidthTag(window, staticWidth);
+					element.style.width = w + "px";
+				}, 3000);
 			}
 		}
 	};

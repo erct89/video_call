@@ -66,12 +66,14 @@ $(document).ready(function() {
 		window.close();
 	});
 
-	//Controlar el tamaño de middle.
+	//Controlar el tamaño de middle. Y el tamaño del ancho del footer.
 	Dimensions.autoHeight(document.getElementsByClassName('middle')[0], 
 		[document.getElementsByTagName('nav')[0],
 		document.getElementsByClassName('page-header')[0], 
 		document.getElementsByClassName('footer')[0],
 		document.getElementsByTagName('hr')[1]]);
+	Dimensions.copyWidthTag(document.getElementsByClassName('page-header')[0], 
+		document.getElementsByClassName('footer')[0]);
 
 	// Initialize the library (console debug enabled)
 	Janus.init({debug: true, callback: function() {
