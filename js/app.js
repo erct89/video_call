@@ -61,6 +61,18 @@ var myusername = null;
 var yourusername = null;	
 
 $(document).ready(function() {
+	//Añadir un handle al boton 'close-window-button'
+	document.getElementById('close-window-button').addEventListener("click",function(){
+		window.close();
+	});
+
+	//Controlar el tamaño de middle.
+	Dimensions.autoHeight(document.getElementsByClassName('middle')[0], 
+		[document.getElementsByTagName('nav')[0],
+		document.getElementsByClassName('page-header')[0], 
+		document.getElementsByClassName('footer')[0],
+		document.getElementsByTagName('hr')[1]]);
+
 	// Initialize the library (console debug enabled)
 	Janus.init({debug: true, callback: function() {
 		// Use a button to start the demo

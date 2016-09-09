@@ -96,6 +96,7 @@ Janus.init = function(options) {
 		}
 		Janus.log("Initializing library");
 		Janus.initDone = true;
+
 		// Detect tab close
 		window.onbeforeunload = function() {
 			Janus.log("Closing window");
@@ -139,6 +140,7 @@ Janus.init = function(options) {
 					return;
 				}
 			}
+			console.log("Janus Init!! - " + src);
 			var oHead = document.getElementsByTagName('head').item(0);
 			var oScript = document.createElement("script");
 			oScript.type = "text/javascript";

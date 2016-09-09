@@ -5,17 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<link rel="shortcut icon" href="favicon.png">
-		<title>WebRTC Gateway: Video Call Demo</title>
-		<script type="text/javascript" src="servers.js"></script>
-		<script type="text/javascript" src="jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.blockUI.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/bootbox.min.js"></script>
-		<script type="text/javascript" src="js/spin.min.js"></script>
-		<script type="text/javascript" src="janus.js"></script>
-		<script type="text/javascript" src="videocalltest.js"></script>
-		<script type="text/javascript" src="js/frameless_window.js"></script>
+		<title>Demo Otis</title>
+		<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap/bootbox.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap/spin.min.js"></script>
+		<script type="text/javascript" src="js/webrtc/servers.js"></script>
+		<script type="text/javascript" src="js/webrtc/adapter.js"></script>
+		<script type="text/javascript" src="js/webrtc/janus.js"></script>
 		<script type="text/javascript" src="js/dimension.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 		<link rel="stylesheet" href="css/demo.css" type="text/css"/>
 		<link rel="stylesheet" href="css/font-awesome.css" type="text/css"/>
@@ -175,7 +175,7 @@
 									</div>
 									<div class="input-group margin-bottom-sm">
 										<span class="input-group-addon">
-											<i class="fa fa-cloud-upload fa-fw"></i>
+											<i class="glyphicon glyphicon-cloud fa-fw"></i>
 										</span>
 										<input class="form-control" type="text" placeholder="Write a DataChannel message to your peer" autocomplete="off" id="datasend" onkeypress="return checkEnter(this, event);" disabled></input>
 									</div>
@@ -208,12 +208,5 @@
 					<p>WebRTC Gateway &copy; 2016</p>
 				</div>
 			</div>
-			<script type="text/javascript">
-				autoHeight(document.getElementsByClassName('middle')[0], 
-					[document.getElementsByTagName('nav')[0],
-					document.getElementsByClassName('page-header')[0], 
-					document.getElementsByClassName('footer')[0],
-					document.getElementsByTagName('hr')[1]]);
-			</script>
 	</body>
 </html>
