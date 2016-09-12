@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.html",
 	"window": {
+		"icon":"app.png",
 		"fullscreen": true, 
 		"show_in_taskbar": true,
 		"title": "demoOtis",
